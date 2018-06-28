@@ -1,5 +1,8 @@
 class SessionController < ApplicationController
     layout "session"
+
+    before_action :require_user, only: [:new]
+
     def index 
         @user=User.new
     end
@@ -39,6 +42,17 @@ class SessionController < ApplicationController
         end
     end
 
+    def edit
+        @user = User.find(params[:user_id])
+    end
+
+    def update
+        @user = User.find(params[:id])
+        @user.update(user_params)
+        redirect_to dashboard_session_index_path
+        
+    end
+    
     private
     def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
