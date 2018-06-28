@@ -1,13 +1,14 @@
 class SessionController < ApplicationController
+    layout "session"
     def index 
         @user=User.new
     end
 
     def login
         islogged=false
-        if !params[:user][:email].blank? and !params[:user][:encrypted_password].blank? 
-            user = User.find_by(email: params[:user][:email].downcase, encrypted_password: params[:user][:encrypted_password].downcase)    
-            if user
+        if !params[:user][:email].blank? and !params[:user][:password].blank? 
+            user = User.find_by(email: params[:user][:email])    
+            if user and user.authenticate(params[:user][:password])
                 session[:user_id]=user.id
                 islogged=true
             end    
@@ -23,4 +24,24 @@ class SessionController < ApplicationController
 
     def dashboard
     end
+
+    def new
+        @user=User.new
+    end
+
+    def create
+        @user = User.new(user_params)
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to dashboard_session_index_path
+        else
+            render 'new'
+        end
+    end
+
+    private
+    def user_params
+    params.require(:user).permit(:name,:email,:password,:password_confirmation)
 end
+end
+

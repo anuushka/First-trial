@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :session do
     collection do
+      get 'signup', to: "session#new"
+      get 'login', to: "session#index"
       post 'login', to: "session#login"
       get 'dashboard', to: "session#dashboard"
     end
