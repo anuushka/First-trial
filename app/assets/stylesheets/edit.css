@@ -1,34 +1,17 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: url(/images/background-rightbox.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    color: #777;
+    font-family: sans-serif;
+    font-weight: 300;
+}
 
- body
- {
-     margin: 0;
-     padding: 0;
-     background-image: url(/images/background-rightbox.png);
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
-     font-size: 16px;
-     color: #777;
-     font-family: sans-serif;
-     font-weight: 300;
- }
-
- 
 #login-box
 {
     position: relative;
@@ -54,12 +37,11 @@ h1
 {
     margin: 0 0 50px 0;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 input[type="text"],
-input[type="password"],
-input[type="email"]
+input[type="password"]
 {
     display: block;
     box-sizing: border-box;
@@ -151,4 +133,3 @@ button.social
 {
     background: #dd4b39;
 }
-

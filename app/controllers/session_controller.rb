@@ -1,7 +1,7 @@
 class SessionController < ApplicationController
-    layout "session"
 
-    before_action :require_user, only: [:new]
+    layout "session"
+    before_action :require_user, only: [:dashboard]
 
     def index 
         @user=User.new
