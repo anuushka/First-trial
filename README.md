@@ -1,2 +1,3 @@
-It includes only the trial of the login, signup form.
+It includes only the view
+the login, signup form.
 HTML, CSS.
