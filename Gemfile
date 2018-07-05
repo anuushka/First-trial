@@ -26,6 +26,24 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Use Devise for authentication
+gem 'devise', '~> 4.2'
+
+#Use jquery
+gem 'jquery-rails'
+
+#Use Omniauth Facebook plugin
+gem 'omniauth-facebook', '~> 4.0'
+
+#Use Omniauth Google plugin
+gem 'omniauth-google-oauth2', '~> 0.4.1'
+
+#Use Omniauth Twitter plugin
+gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
+
+#Use ActiveRecord Sessions
+gem 'activerecord-session_store', '~> 1.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -51,6 +69,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :development do
+  #Use Dotenv for environment variables
+  gem 'dotenv', '~> 2.2.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

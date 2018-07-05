@@ -4,7 +4,7 @@
 <div id="login-box">
 <div class="left-box">
     <h1>Хувийн мэдээлэл шинэчлэх</h1>
-    <%= form_for(@user, url: session_path(id: params[:user_id]), method: "put") do |f| %>
+    <%= form_for(@user, url: session_path(id: session[:user_id]), method: "put") do |f| %>
         <% @user.errors.full_messages.each do |msg| %>
             <li class="error"><%= msg %></li>
           <% end %>
